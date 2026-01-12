@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+
+:root {
+    --bg: #0b0f1a;
+    --card: #111827;
+    --accent: #f97316;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --border: #1f2937;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at 20% 20%, rgba(249,115,22,0.12), transparent 25%), var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    background: rgba(17, 24, 39, 0.85);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border);
+}
+
+nav .logo {
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+nav .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 600;
+}
+nav .nav-links a:hover { color: var(--accent); }
+
+.hero {
+    display: flex;
+    align-items: center;
+    padding: 48px 32px;
+    background: linear-gradient(135deg, rgba(249,115,22,0.14), rgba(17,24,39,0.6));
+}
+
+.hero-content {
+    max-width: 680px;
+}
+
+.hero h1 {
+    margin: 0 0 12px;
+    font-size: 36px;
+}
+
+.hero p { color: var(--muted); margin-bottom: 20px; }
+
+.cta-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.cta-button {
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+.cta-primary { background: var(--accent); color: #0b0f1a; }
+.cta-secondary { border-color: var(--accent); color: var(--accent); }
+
+.container { padding: 32px; }
+
+.products-preview h2,
+.stats h2,
+.container h2 { margin-top: 0; }
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.product-card, .artisan-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.24);
+}
+
+.product-card img,
+.artisan-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.product-info, .artisan-info {
+    padding: 14px;
+}
+
+.product-title, .artisan-info h3 { margin: 0 0 6px; }
+.product-price { font-weight: 700; color: var(--accent); margin-bottom: 6px; }
+.product-card p { color: var(--muted); margin: 0; }
+
+.artisans-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.artisan-info span { color: var(--accent); font-weight: 600; }
+.artisan-info p { color: var(--muted); }
+
+.stats { background: rgba(17,24,39,0.8); padding: 32px; }
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+}
+.stat { text-align: center; border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.stat-number { font-size: 28px; font-weight: 800; color: var(--accent); }
+
+form {
+    display: grid;
+    gap: 10px;
+    max-width: 480px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: #0f172a;
+    color: var(--text);
+}
+button {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: var(--accent);
+    color: #0b0f1a;
+    font-weight: 700;
+    cursor: pointer;
+}
+button:hover { opacity: 0.9; }
+
+footer {
+    padding: 24px 32px;
+    background: #0d1422;
+    text-align: center;
+    color: var(--muted);
+}
+
+@media (max-width: 768px) {
+    header nav { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .nav-links { flex-wrap: wrap; }
+    .hero { flex-direction: column; }
+}
